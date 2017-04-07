@@ -172,6 +172,7 @@ public class BasicReservationService extends Poller implements ReservationServic
                     }
                     UsageType usageType = getUsageType(offer.getInstanceType(), offer.getProductDescription());
                     // Unknown Zone
+                    logger.info("Querying " + offer.getAvailabilityZone() + " for " + region.name);
                     if (Zone.getZone(offer.getAvailabilityZone()) == null) {
                         logger.error("No Zone for " + offer.getAvailabilityZone());
                     } else {
